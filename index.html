@@ -1438,12 +1438,7 @@ const defaultSettings = {
   adminPass: 'DARLAKBIRA09@',
 };
 
-// ===== LOAD / SAVE =====
-function load(key, def) {
-  try { const s = sessionStorage.getItem(key); return s ? JSON.parse(s) : JSON.parse(JSON.stringify(def)); }
-  catch(e) { return JSON.parse(JSON.stringify(def)); }
-}
-function save(key, val) { try { sessionStorage.setItem(key, JSON.stringify(val)); } catch(e) {} }
+
 
 let products = load(STORAGE_KEY, defaultProducts);
 let features = load(FEATURES_KEY, defaultFeatures);
